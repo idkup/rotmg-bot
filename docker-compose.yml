@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
     volumes:
       - $PWD:/app
-    command: sh -c "cd /app && apk add --no-cache --virtual .build-deps gcc musl-dev && python -m pip install -r required_modules.txt && python3 bot.py"
+    command: sh -c "cd /app && apk add --no-cache --virtual .build-deps gcc musl-dev && python -m pip install -r required-modules.txt && python3 bot.py"
 
 networks:
   discordBot:
