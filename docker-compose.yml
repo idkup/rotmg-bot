@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  rotmg:
+    networks:
+      - discordBot
+    image: python:3.5.4-alpine
+    container_name: rotmgBot
+    restart: unless-stopped
+    volumes:
+      - $PWD:/app
+    command: sh -c "cd /app && apk add --no-cache --virtual .build-deps gcc musl-dev && python -m pip install -r required_modules.txt && python3 bot.py"
+
+networks:
+  discordBot:
+    name: rotmgBot
