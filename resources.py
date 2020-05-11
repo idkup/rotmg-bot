@@ -25,7 +25,8 @@ class AFKCheck:
         self.raiders = []
 
     def __str__(self):
-        return f"""AFK Check started in Channel ID {self.channel}, message ID {self.message_id} by <@{self.leader}>."""
+        return "AFK Check started in Channel ID {}, message ID {} by <@{}>.".format(self.channel, self.message_id,
+                                                                                    self.leader)
 
 
 class Raider:
@@ -39,4 +40,5 @@ class Raider:
         self.keys_opened = 0
 
     def __str__(self):
-        return f"{self.ign}, ID {self.discord_id}, c/l/k {self.runs_completed}, {self.runs_led}, {self.keys_opened}"
+        return "{}, ID {}, c/l/k {}, {}, {}".format(self.ign, self.discord_id, self.runs_completed, self.runs_led,
+                                                     self.keys_opened)
